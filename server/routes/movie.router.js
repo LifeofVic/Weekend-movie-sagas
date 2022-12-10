@@ -25,7 +25,8 @@ router.get('/details/:id', (req, res) => {
 	pool
 		.query(queryText, [movieDetail])
 		.then(result => {
-			console.log('Received the all data from this movie: ', result);
+			console.log('Result is all data for this movie: ', result);
+			res.send(result.rows);
 			res.sendStatus(200);
 		})
 		.catch(error => {

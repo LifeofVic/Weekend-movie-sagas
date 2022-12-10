@@ -31,6 +31,7 @@ router.get('/details/:id', (req, res) => {
 		})
 		.catch(error => {
 			console.log("Error in router.get(':id')", error);
+			res.sendStatus(500);
 		});
 });
 //! ---------------------------------------------------------------------------

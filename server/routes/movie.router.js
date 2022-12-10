@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 });
 
 //! this will get the detail page for a particular id from movie selection.
-router.get('/:id', (req, res) => {
+router.get('/details/:id', (req, res) => {
 	const movie_id = req.params.id;
 	console.log('movie id: ', movie_id);
 

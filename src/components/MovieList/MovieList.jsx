@@ -16,9 +16,12 @@ function MovieList() {
 
 	const handleDescription = movie => {
 		console.log('Movie clicked: ', movie);
-		dispatch({});
-
+		dispatch({
+			type: 'SET_DETAILS',
+			payload: movie,
+		});
 		history.push('/details/' + movie.id);
+		//
 		// axios.get('/' + movie.id).then(response => {
 		// 	console.log('Getting information from selected movie');
 		// });

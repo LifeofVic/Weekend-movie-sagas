@@ -14,7 +14,6 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
 	yield takeEvery('FETCH_MOVIES', fetchAllMovies);
-	yield takeEvery('FETCH_DETAIL', fetchDetail);
 }
 
 function* fetchAllMovies() {
@@ -27,8 +26,7 @@ function* fetchAllMovies() {
 		console.log('get all error');
 	}
 }
-
-//! this will store the movieSelected object.
+//! this will store the selectedMovie object onClick.
 const movieDetails = (state = [], action) => {
 	if (action.type === 'SET_DETAILS') {
 		console.log('MovieDetail payload is: ', action.payload);

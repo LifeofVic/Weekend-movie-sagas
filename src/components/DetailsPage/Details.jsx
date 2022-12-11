@@ -15,9 +15,10 @@ export default function Details() {
 	};
 
 	return (
-		<div>
-			<h1> This is the details page</h1>
+		<div className='container'>
+			<h2> {movie.title}</h2>
 			<img src={movie.poster} />
+			<p>{movie.description} </p>
 			<button onClick={HomePage}> Back </button>
 		</div>
 	);

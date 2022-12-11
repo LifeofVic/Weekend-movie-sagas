@@ -35,9 +35,20 @@ function MovieList() {
 			<section className='movies'>
 				{movies.map(movie => {
 					return (
-						<Card key={movie.id} className='card'>
+						<Card
+							key={movie.id}
+							className='card'
+							sx={{
+								maxWidth: 250,
+								backgroundColor: 'gray',
+								'&:hover': {
+									backgroundColor: 'white',
+								},
+							}}>
 							<CardContent>
-								<Typography>{movie.title}</Typography>
+								<Typography variant='h5' noWrap={false}>
+									{movie.title}
+								</Typography>
 								<img
 									src={movie.poster}
 									alt={movie.title}

@@ -20,7 +20,10 @@ export default function Details() {
 
 	return (
 		<div className='container'>
-			<Card variant='outlined'>
+			<Card
+				variant='outlined'
+				sx={{ maxWidth: 1000 }}
+				style={{ backgroundColor: 'lightgray' }}>
 				<h2> {movie.title}</h2>
 				<img src={movie.poster} />
 

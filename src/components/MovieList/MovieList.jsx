@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import Details from '../DetailsPage/Details';
+
 function MovieList() {
 	const dispatch = useDispatch();
 	const history = useHistory();
@@ -27,6 +27,9 @@ function MovieList() {
 		// });
 	};
 
+	const detail = useSelector(store => store.movieDetails);
+
+	console.log('This is the current movie detail: ', detail);
 	return (
 		<main>
 			<h1>MovieList</h1>

@@ -32,6 +32,7 @@ const movieDetails = (state = [], action) => {
 		console.log('MovieDetail payload is: ', action.payload);
 		return action.payload;
 	}
+	console.log('MovieDetail payload is: ', action.payload);
 	return state;
 };
 //! -----------------------------------------
@@ -64,6 +65,7 @@ const storeInstance = createStore(
 	combineReducers({
 		movies,
 		genres,
+		movieDetails,
 	}),
 	// Add sagaMiddleware to our store
 	applyMiddleware(sagaMiddleware, logger)

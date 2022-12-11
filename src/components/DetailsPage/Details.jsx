@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import '../DetailsPage/DetailsStyle.css';
+import { Box } from '@mui/material';
 
 export default function Details() {
 	const [movie, setMovie] = useState(useSelector(store => store.movieDetails));
@@ -20,7 +21,7 @@ export default function Details() {
 
 	return (
 		<div className='container'>
-			<Card
+			<Box
 				variant='outlined'
 				sx={{ maxWidth: 1000 }}
 				style={{ backgroundColor: 'lightgray' }}>
@@ -31,7 +32,7 @@ export default function Details() {
 				<Button onClick={HomePage} variant='contained'>
 					Back
 				</Button>
-			</Card>
+			</Box>
 		</div>
 	);
 }

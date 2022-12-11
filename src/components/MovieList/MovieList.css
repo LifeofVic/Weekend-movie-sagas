@@ -4,4 +4,14 @@
 }
 img {
 cursor: pointer;
+margin: 10px;
 }
+
+.card{
+margin: 10px;
+background-color: lightgray;
+}
+body{
+background-color: rgba(0, 0, 0, 0.906);
+}
+

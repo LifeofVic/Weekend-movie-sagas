@@ -23,7 +23,7 @@ router.get('/details/:id', (req, res) => {
 	let queryText = 'SELECT * FROM movies WHERE "id" =$1;';
 
 	pool
-		.query(queryText, [movieDetail])
+		.query(queryText, [movie_detail])
 		.then(result => {
 			console.log('Result is all data for this movie: ', result);
 			res.send(result.rows);

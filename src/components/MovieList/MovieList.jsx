@@ -2,8 +2,11 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
-
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
 function MovieList() {
 	const dispatch = useDispatch();
 	const history = useHistory();
@@ -20,11 +23,7 @@ function MovieList() {
 			type: 'SET_DETAILS',
 			payload: movie,
 		});
-		history.push('/details/' + movie.id);
-		//
-		// axios.get('/' + movie.id).then(response => {
-		// 	console.log('Getting information from selected movie');
-		// });
+		history.push('/details/' + movie.title);
 	};
 
 	const detail = useSelector(store => store.movieDetails);
@@ -36,14 +35,16 @@ function MovieList() {
 			<section className='movies'>
 				{movies.map(movie => {
 					return (
-						<div key={movie.id}>
-							<h3>{movie.title}</h3>
-							<img
-								src={movie.poster}
-								alt={movie.title}
-								onClick={() => handleDescription(movie)}
-							/>
-						</div>
+						<Card key={movie.id} className='card'>
+							<CardContent>
+								<Typography>{movie.title}</Typography>
+								<img
+									src={movie.poster}
+									alt={movie.title}
+									onClick={() => handleDescription(movie)}
+								/>
+							</CardContent>
+						</Card>
 					);
 				})}
 			</section>

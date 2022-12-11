@@ -3,12 +3,16 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import '../DetailsPage/DetailsStyle.css';
 
 export default function Details() {
 	const [movie, setMovie] = useState(useSelector(store => store.movieDetails));
 	const history = useHistory();
 
-	console.log('movie in DETAILS: ', movie);
+	console.log('movie in DETAILS page: ', movie);
 
 	const HomePage = () => {
 		history.push('/');
@@ -16,10 +20,15 @@ export default function Details() {
 
 	return (
 		<div className='container'>
-			<h2> {movie.title}</h2>
-			<img src={movie.poster} />
-			<p>{movie.description} </p>
-			<button onClick={HomePage}> Back </button>
+			<Card variant='outlined'>
+				<h2> {movie.title}</h2>
+				<img src={movie.poster} />
+
+				<p>{movie.description} </p>
+				<Button onClick={HomePage} variant='contained'>
+					Back
+				</Button>
+			</Card>
 		</div>
 	);
 }

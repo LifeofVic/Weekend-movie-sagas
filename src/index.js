@@ -37,6 +37,19 @@ const movieDetails = (state = [], action) => {
 };
 //! -----------------------------------------
 
+function* fetchGenre(action) {
+	try {
+		const movieId = action.payload.id;
+		const genre = yield axios.get(`/api/genre/${movieId}`);
+		yield put({
+			type: 'SET_GENRES',
+			payload: genre.data,
+		});
+	} catch (err) {
+		console.error(err);
+	}
+}
+
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 

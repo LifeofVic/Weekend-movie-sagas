@@ -23,7 +23,11 @@ function MovieList() {
 			type: 'SET_DETAILS',
 			payload: movie,
 		});
-		history.push('/details/' + movie.title);
+		dispatch({
+			type: 'SET_GENRE',
+			payload: movie,
+		});
+		history.push('/details/' + movie.id);
 	};
 
 	const detail = useSelector(store => store.movieDetails);

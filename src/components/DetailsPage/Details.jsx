@@ -16,6 +16,16 @@ export default function Details() {
 
 	console.log('movie in DETAILS page: ', movie);
 	console.log('genre for movie selected: ', movieGenre);
+
+	// let arrayGenre = [''];
+
+	// for (let i = 0; i < movieGenre.length - 1; i++) {
+	// 	{
+	// 		arrayGenre[i] = movieGenre[i].name;
+	// 	}
+	// }
+
+	console.log('Genre is: ', movieGenre[0].name);
 	const HomePage = () => {
 		history.push('/');
 	};
@@ -28,11 +38,12 @@ export default function Details() {
 				style={{ backgroundColor: 'lightgray' }}>
 				<h2> {movie.title}</h2>
 				<img src={movie.poster} />
-				{movieGenre.map(genre => {
-					return <p>{genre}</p>;
+				<h4> Genre:</h4>
+				{movieGenre.map((genre, index) => {
+					return <li key={index}> {genre.name}</li>;
 				})}
-
 				<p>{movie.description} </p>
+
 				<Button onClick={HomePage} variant='contained'>
 					Back
 				</Button>

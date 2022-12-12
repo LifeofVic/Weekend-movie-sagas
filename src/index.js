@@ -30,7 +30,6 @@ function* fetchAllMovies() {
 //! this will store the selectedMovie object onClick.
 const movieDetails = (state = [], action) => {
 	if (action.type === 'SET_DETAILS') {
-		console.log('MovieDetail payload is: ', action.payload);
 		return action.payload;
 	}
 	console.log('MovieDetail payload is: ', action.payload);

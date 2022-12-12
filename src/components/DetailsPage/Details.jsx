@@ -25,7 +25,7 @@ export default function Details() {
 	// 	}
 	// }
 
-	console.log('Genre is: ', movieGenre[0].name);
+	// console.log('Genre is: ', movieGenre[0].name);
 	const HomePage = () => {
 		history.push('/');
 	};
@@ -40,7 +40,7 @@ export default function Details() {
 				<img src={movie.poster} />
 				<h4> Genre:</h4>
 				{movieGenre.map((genre, index) => {
-					return <li key={index}> {genre.name}</li>;
+					return <li key={index}> {genre.name} </li>;
 				})}
 				<p>{movie.description} </p>
 

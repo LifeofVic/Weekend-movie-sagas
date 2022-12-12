@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
 
+//! This makes the joins of the table.
+//* SELECTS column "name" from the table "genres".
+//* JOINS TABLE "movie_genre" at column "genre_id" to TABLE "genre" at column "id".
+//* WHERE TABLE "movie_genres".movie_id is EQUAL to the "id" of the selected "id" in [ /details/:id]
 router.get('/:id', (req, res) => {
 	const movieId = req.params.id;
 	const query = `SELECT "genres".name FROM "genres"

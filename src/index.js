@@ -36,7 +36,7 @@ const movieDetails = (state = [], action) => {
 	return state;
 };
 //! -----------------------------------------
-
+//!This will utilize the router.get in the genre.router to receive the genre of the desired movie according to the :id of the url.
 function* fetchGenre(action) {
 	try {
 		const movieId = action.payload.id;
@@ -72,7 +72,7 @@ const genres = (state = [], action) => {
 			return state;
 	}
 };
-
+//! made sure to add the newly reducer here to be able to utilize this reducer where ever it is called.
 // Create one store that all components can use
 const storeInstance = createStore(
 	combineReducers({

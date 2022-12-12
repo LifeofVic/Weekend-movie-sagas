@@ -1,9 +1,16 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Movie Listings
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Duration: 12 hours.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+This project is a Movie Listing that will show the poster and title of the
+movie. When an user clicks on the image of the movie the user will be redirected
+to the details page. The details page will contain the movie's genre associated
+to it and the description of the movie. The user will also have a back button
+that will redirect the user to the homepage and select a new movie.
+
+## Acknowledgement
+
+Thanks to Prime Digital Academy who equipped and helped me to make this
+application a reality.
